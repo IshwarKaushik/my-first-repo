@@ -1,0 +1,12 @@
+#!/bin/sh
+# lock the feature requests branch for pushing
+refname="$1"
+echo $refname
+if [[ $refname == "refs/remotes/origin/feature-requests" ]]
+then
+    echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    echo "You cannot push to feature requests. It's locked"
+    echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    exit 1
+fi
+exit 0
